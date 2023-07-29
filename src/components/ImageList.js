@@ -1,9 +1,10 @@
-function Image() {
+function ImageList({ images }) {
+  console.log("Image array", images);
   return (
     <div>
-      <h2>Image</h2>
+      <h2>ImageList</h2>
     </div>
   );
 }
 
-export default Image;
+export default ImageList;
