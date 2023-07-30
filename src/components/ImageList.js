@@ -1,10 +1,10 @@
+import Image from "./Image";
+
 function ImageList({ images }) {
-  console.log("Image array", images);
-  return (
-    <div>
-      <h2>ImageList</h2>
-    </div>
-  );
+  const renderImages = images.map((image) => (
+    <Image image={image} key={image.id} />
+  ));
+  return <div>{renderImages}</div>;
 }
 
 export default ImageList;

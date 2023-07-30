@@ -1,5 +1,10 @@
 import { useState } from "react";
 
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
+
 function SearchBar({ onSubmit }) {
   const [term, setTerm] = useState("");
 
@@ -15,9 +20,16 @@ function SearchBar({ onSubmit }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={term} onChange={handleChange} />
-      </form>
+      <Form onSubmit={handleSubmit}>
+        <Container fluid>
+          <Row className="mb-3">
+            <Col>
+              <Form.Label>Enter Search Term:</Form.Label>
+              <Form.Control type="text" onChange={handleChange} value={term} />
+            </Col>
+          </Row>
+        </Container>
+      </Form>
     </div>
   );
 }

@@ -8,8 +8,9 @@ import searchImages from "./api";
 function App() {
   const [images, setImages] = useState([]);
 
-  const handleSearch = (term) => {
-    setImages(searchImages(term));
+  const handleSearch = async (term) => {
+    const images = await searchImages(term);
+    setImages(images);
   };
 
   return (
